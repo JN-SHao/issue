@@ -1,7 +1,0 @@
-Hi Jay, I may need some of your time to explain in detail the problem I encountered with this task and some considerations for my planned implementation.
-
-Obstacle: In the ECI system, two objects (DirectoryEntry and PrincipalContext) are used to connect to ADLDS. While DirectoryEntry can always connect normally using a username and password (as demonstrated in my demo and CLI tool), when I try to modify the code to use PrincipalContext for connection in the AuthenticateUser method, I cannot connect at all (as reflected in my demo), even though there seems to be no difference other than the server address and the addition of a username and password.
-
-Plan: 1. If the reason why PrincipalContext cannot connect to ADLDS can be truly identified, then it would be possible to reuse a lot of the original code without introducing unnecessary bugs. In fact, connecting using a username and password is still not successful here. 2. As a last resort, replacing all operations that use PrincipalContext with DirectoryEntry (as I am currently trying to do in my demo) is an option, but this approach requires significant changes and the risks are uncertain.
-
-I hope to also get some advice from you, thank you. And sorry again for not giving you direct feedback earlier.
