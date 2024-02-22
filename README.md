@@ -1,11 +1,7 @@
-hi, Jay 
-接下来可能需要占用你的一些时间去向你详细说明这个task我遇到的问题和计划实施的一些考虑。
+Hi Jay, I may need some of your time to explain in detail the problem I encountered with this task and some considerations for my planned implementation.
 
-阻碍：
-1.ECI系统中连接ADLDS一共用到了两个对象（DirectoryEntry和PrincipalContext）去连接，其中DirectoryEntry使用用户名和密码一直是可以正常连接的（正如我的demo和cli工具），但是在AuthenticateUser方法中修改使用PrincipalContext连接的代码时，无论如何都无法连接上（正如我demo反馈的那样），尽管除了服务器地址不同以及添加了用户名和密码并没发现任何区别。
+Obstacle: In the ECI system, two objects (DirectoryEntry and PrincipalContext) are used to connect to ADLDS. While DirectoryEntry can always connect normally using a username and password (as demonstrated in my demo and CLI tool), when I try to modify the code to use PrincipalContext for connection in the AuthenticateUser method, I cannot connect at all (as reflected in my demo), even though there seems to be no difference other than the server address and the addition of a username and password.
 
-计划：
-1.如果可以真正找到使用PrincipalContext连接不上的ADLDS的原因，那么就可以大量复用原来的代码并且不会产生没必要的bug，事实上在这里依然不能使用用户名和密码连接成功。
-2.最坏的打算，就是使用DirectoryEntry来替换掉PrincipalContext的所有的操作逻辑（正如目前我在demo中正在尝试去做的），但这里这个种方法改动比较大不确定风险多
+Plan: 1. If the reason why PrincipalContext cannot connect to ADLDS can be truly identified, then it would be possible to reuse a lot of the original code without introducing unnecessary bugs. In fact, connecting using a username and password is still not successful here. 2. As a last resort, replacing all operations that use PrincipalContext with DirectoryEntry (as I am currently trying to do in my demo) is an option, but this approach requires significant changes and the risks are uncertain.
 
-希望也能得到你的一些建议，谢谢。再次没有对你直接的反馈说声抱歉。
+I hope to also get some advice from you, thank you. And sorry again for not giving you direct feedback earlier.
